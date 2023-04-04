@@ -2,6 +2,7 @@ version: '3'
 services:
   nifi:
     image: apache/nifi:latest
+    restart: always
     ports:
       - "172.17.0.1:8080:8080"
     volumes:
