@@ -3,11 +3,14 @@ services:
     nifi:
         image: 'apache/nifi:latest'
         restart: always
+        hostname: ${DOMAIN}
         ports:
-            - '172.17.0.1:8448:8443'
+            - '172.17.0.1:8448:8448'
         environment:
             - SINGLE_USER_CREDENTIALS_USERNAME=admin
             - SINGLE_USER_CREDENTIALS_PASSWORD=${ADMIN_PASSWORD}
+            - NIFI_WEB_HTTPS_PORT=8448
+            - NIFI_WEB_PROXY_HOST=172.17.0.1:8448
         volumes:
             - ./database_repository:/opt/nifi/nifi-current/database_repository
             - ./flowfile_repository:/opt/nifi/nifi-current/flowfile_repository
