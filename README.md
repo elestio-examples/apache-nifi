@@ -10,7 +10,7 @@ Deploy apache/nifi server with CI/CD on Elestio
 
 # Once deployed ...
 
-You can can open apache/nifi UI here:
+You can open apache/nifi UI here:
 
     URL: https://[CI_CD_DOMAIN]/nifi
     login: root
